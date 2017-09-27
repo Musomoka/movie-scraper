@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+<h3><%=link_to 'Query Reviews', review_query_feed_entry_path, remote: true%></h3>
+<section>
+     <p></p><%=raw @feed_entry.summary%></p>
+     <br>
+     <h3><%=@feed_entry.name %></h3> 
+      <h3><%=@feed_entry.url %></h3>
+    
+</section>
+
+<%= link_to 'Edit', edit_feed_entry_path(@feed_entry) %> |
+<%= link_to 'Back', feed_entries_path %>

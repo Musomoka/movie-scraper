@@ -1,0 +1,1 @@
+json.partial! "feed_entries/feed_entry", feed_entry: @feed_entry

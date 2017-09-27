@@ -1,0 +1,1 @@
+json.array! @feed_entries, partial: 'feed_entries/feed_entry', as: :feed_entry

@@ -1,0 +1,36 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+      <div class="row">
+			<p id="notice"><%= notice %></p>
+      <h1>Listing Feed Entries</h1>
+      <h3><%=link_to 'Query Reviews', review_query_feed_entry_url(@feed_entry)%></h3>
+      <div class="col-md-8">
+        
+          <table class = "table">
+            <thead>
+              <tr>
+                <th>name</th>    
+                <th>url</th> 
+                <th>reviews</th>
+              </tr>
+            </thead>
+    
+            <tbody>
+              <% @feed_entry.reviews.each do |review| %>
+                <tr>
+                  <td><%=review.author %></td>
+                  <td><%=review.body.words%></td>
+                  <td><%=review.feed_entry_id%></td>
+                 
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+      	</div>
+      </div>
+	  </div>
+	</div>
+</div>
+
+
