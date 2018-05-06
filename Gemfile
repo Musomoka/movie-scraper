@@ -35,6 +35,7 @@ gem 'mechanize'
 gem 'sanitize'
 gem 'stopwords-filter'
 gem 'pragmatic_segmenter'
+gem 'sidekiq'
 
 
 # Use ActiveModel has_secure_password
@@ -56,6 +57,7 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   gem 'awesome_print'
+
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

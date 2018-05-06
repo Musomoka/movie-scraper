@@ -55,6 +55,7 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.4)
+    connection_pool (2.2.1)
     crass (1.0.2)
     debug_inspector (0.0.2)
     domain_name (0.5.20170404)
@@ -117,6 +118,8 @@ GEM
     pragmatic_segmenter (0.3.15)
       unicode
     rack (1.6.5)
+    rack-protection (2.0.0)
+      rack
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.5)
@@ -145,6 +148,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (12.0.0)
     rdoc (4.3.0)
+    redis (4.0.1)
     sanitize (4.5.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.4.4)
@@ -160,6 +164,11 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sidekiq (5.0.5)
+      concurrent-ruby (~> 1.0)
+      connection_pool (~> 2.2, >= 2.2.0)
+      rack-protection (>= 1.5.0)
+      redis (>= 3.3.4, < 5)
     spring (2.0.1)
       activesupport (>= 4.2)
     sprockets (3.7.1)
@@ -213,6 +222,7 @@ DEPENDENCIES
   sanitize
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
+  sidekiq
   spring
   sqlite3
   stopwords-filter

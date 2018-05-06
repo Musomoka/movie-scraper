@@ -8,12 +8,12 @@
           <table class = "table">
             <thead>
               <tr>
-                <th>Sumaary</th>    
-                <th>Name</th> 
+                <th>Sumaary</th>
+                <th>Name</th>
                 <th>Review Link</th>
               </tr>
             </thead>
-    
+
             <tbody>
               <% @feed_entries.each do |feed_entry| %>
                 <tr>
@@ -21,8 +21,8 @@
                   <br>
                   <td><%=feed_entry.name %></td>
                   <td><%=feed_entry.url%></td>
-                  <td><%=link_to 'Reviews', feed_entry_reviews_path(feed_entry.id)%></td>  
-                 
+                  <td><%=link_to 'Reviews', feed_entry_reviews_path(feed_entry.id)%></td>
+
                 </tr>
               <% end %>
             </tbody>
@@ -32,5 +32,6 @@
 	  </div>
 	</div>
 </div>
+
 
 

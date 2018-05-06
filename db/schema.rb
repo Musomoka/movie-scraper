@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170608100417) do
+ActiveRecord::Schema.define(version: 20170928225442) do
 
   create_table "descriptions", force: :cascade do |t|
     t.string   "word",       limit: 255
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170608100417) do
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
     t.text     "reviews",      limit: 65535
+    t.text     "word",         limit: 65535
   end
 
   create_table "libraries", force: :cascade do |t|

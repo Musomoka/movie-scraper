@@ -11,54 +11,47 @@ class Review < ActiveRecord::Base
 
      #add initial link
      page = Mechanize.new
+
       page.get(movie_url) do |current_page|
 
-       2.times do
+       50.times do
        #scan page for content 1st NOKOGIRI
          current_page.search("//div[@class='movie-review-item-content']").each do |content|
 
           content = content.text
 
+
           sieve = Stopwords::Snowball::WordSieve.new
           content = sieve.filter lang: :en, words: content.split
-         content =  content.join(" ")
+          content =  content.join(" ")
 
           content = PragmaticSegmenter::Segmenter.new(text: content)
 
-
-
-
-
-
-
-
+          review_list = []
            content.segment.each do |sentence|
 
+              review_list = review_list.push(sentence)
+
+
+           end
             create!(
 
             :feed_entry_id => feedentry_id,
-            :body => sentence
+            :body => review_list
             )
-
-              end
 
           current_page = current_page.link_with(:text => 'More Reviews').click
 
         end
+
       end
      end
+
     end
 
 
 
 
 
-
-
-
-
 end
-
-
-
 
